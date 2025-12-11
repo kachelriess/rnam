@@ -5,4 +5,6 @@ try:
 except PackageNotFoundError:
     __version__ = "0.0.0"
 
-__all__ = ["__version__"]
+from .linear import Linear
+
+__all__ = ["__version__", "Linear"]
