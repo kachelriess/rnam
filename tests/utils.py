@@ -1,3 +1,6 @@
+from contextlib import contextmanager
+from time import perf_counter
+
 import torch
 
 
@@ -16,3 +19,21 @@ def detach_clone_req_grad(*input):
         x_ = x.detach().clone()
         x_.requires_grad = True
         yield x_
+
+
+class Timer:
+    def __init__(self):
+        self.time = float("inf")
+
+
+@contextmanager
+def timer(cuda):
+    time = Timer()
+    if cuda:
+        torch.cuda.synchronize()
+    start = perf_counter()
+    yield time
+    if cuda:
+        torch.cuda.synchronize()
+    end = perf_counter()
+    time.time = end - start
