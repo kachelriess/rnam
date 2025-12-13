@@ -1,0 +1,44 @@
+[project]
+name = "rnam"
+version = "0.1.0"
+description = "recurrent neural additive model"
+authors = [
+    { name = "Lucas Kachelrieß" }
+]
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.10,<=3.14"
+keywords = [
+    "interpretable machine learning",
+    "recurrent neural additive models",
+    "parallelized recurrent models"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "numpy",
+    "torch (>=2.0,<3.0)"
+]
+
+[dependency-groups]
+dev = [
+    "ruff (==0.14.5)",
+    "mypy (==1.18.2)",
+    "pre-commit-hooks (==6.0.0)",
+    "pre-commit (==4.4.0)",
+    "pytest (==9.0.1)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
