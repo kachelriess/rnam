@@ -20,6 +20,10 @@ Last accessed: 2025-12-13
 $ pip install git+https://github.com/kachelriess/rnam
 ```
 
+## Example
+
+RNAM is briefly demonstrated in [example.ipynb](example.ipynb).
+
 ## References
 
 ```bibtex
